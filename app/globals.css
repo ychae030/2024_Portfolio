@@ -42,4 +42,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .text-display {
+    font-size: 7vw;
+    line-height: 8vw;
+  }
 }
