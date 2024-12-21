@@ -1,4 +1,5 @@
 import React from "react";
+import LaptopShowroom from "./LaptopShowroom";
 
 const PARA: string[] = ["I create Modern,", "resposive Website"];
 const HEADING: string[] = [
@@ -20,6 +21,7 @@ export default function Hero() {
       <h2 className="grid justify-center text-display text-brand font-[family-name:var(--font-display)]">
         {renderSpans(HEADING)}
       </h2>
+      <LaptopShowroom />
     </section>
   );
 }
