@@ -1,5 +1,5 @@
-@tailwind base;
 @tailwind components;
+@tailwind base;
 @tailwind utilities;
 
 @font-face {
@@ -36,6 +36,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "GmarketSansMedium", Arial, Helvetica, sans-serif;
+  height: 300vh;
 }
 
 @layer utilities {
@@ -46,4 +47,19 @@ body {
     font-size: 7vw;
     line-height: 8vw;
   }
+}
+
+/* 모서리 공통 스타일 */
+.corner {
+  position: absolute;
+}
+.corner-svg {
+  width: 50px;
+  height: 50px;
+}
+.diagonal-line,
+.vertical-line,
+.horizontal-line {
+  stroke: white;
+  stroke-width: 1;
 }

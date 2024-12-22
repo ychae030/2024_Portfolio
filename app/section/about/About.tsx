@@ -18,13 +18,13 @@ export default function About() {
   return (
     <section
       id="about"
-      className="pt-32 flex gap-10 flex-col 2xl:flex-row lg:flex-row md:flex-col sm:flex-col"
+      className="pt-32 flex gap-10 flex-col 2xl:flex-row lg:flex-row md:flex-col sm:flex-col "
     >
       <div ref={imageRef}>
         <Image
           src={"/images/me.jpg"}
           alt="me"
-          width={350}
+          width={340}
           height={450}
           priority
         />

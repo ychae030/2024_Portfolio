@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "CHAEWON’s BLOG",
+    "overview": "next.js 를 이용해 정적 블로그를 만들었습니다. mailto와 markdown 라이브러리를 활용했습니다.",
+    "skills": ["Next.js", "TypeScript", "TawilwindCSS"],
+    "path": "CHAEWON-BLOG",
+    "img": "/images/blog.png"
+  },
+  {
+    "id": 2,
+    "title": "하루모음",
+    "overview": "할 일(Todo 리스트) 과 감정 이모티콘을 기반으로 사용자가 하루를 기록할 수 있는 다이어리 앱입니다. 할 일을 정리하고, 그날의 기분을 이모티콘으로 선택해 일기를 작성할 수 있습니다.",
+    "skills": ["React", "TypeScript", "TawilwindCSS", "Firebase"],
+    "path": "Harumoem",
+    "img": "/images/blog.png"
+  }
+]
