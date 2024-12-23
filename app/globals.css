@@ -36,7 +36,6 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "GmarketSansMedium", Arial, Helvetica, sans-serif;
-  height: 300vh;
 }
 
 @layer utilities {
