@@ -20,7 +20,7 @@ export default function About() {
       id="about"
       className="pt-32 flex gap-10 flex-col 2xl:flex-row lg:flex-row md:flex-col sm:flex-col "
     >
-      <div ref={imageRef}>
+      <div ref={imageRef} className="mx-auto">
         <Image
           src={"/images/me.jpg"}
           alt="me"

@@ -7,10 +7,10 @@ export default async function Projects() {
   const projects = await getAllProjects();
 
   return (
-    <section className="py-32">
+    <section className="py-32 ">
       <ul className="grid gap-20">
         {projects.map(({ id, title, overview, skills, img }) => (
-          <li key={id} className="flex gap-10 justify-between">
+          <li key={id} className="flex gap-10 justify-between group">
             <ProjectImg img={img} />
             <ProjectOverview
               title={title}
