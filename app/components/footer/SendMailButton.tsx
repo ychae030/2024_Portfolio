@@ -1,9 +1,14 @@
 import React from "react";
-
+import Link from "next/link";
 export default function SendMailButton() {
   return (
-    <button className="self-start text-xl border-background border-b">
-      Send Mail
-    </button>
+    <>
+      <Link
+        className="self-start text-xl border-background border-b"
+        href={"mailto:ycahe1997@gmail.com"}
+      >
+        Send Mail
+      </Link>
+    </>
   );
 }
