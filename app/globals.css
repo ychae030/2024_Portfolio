@@ -23,6 +23,7 @@
   --foreground: #ffffff;
   --brand: #d7abc5;
   --font-display: "CWDangamAsac-Bold";
+  --shadow: rgb(0, 0, 0, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
