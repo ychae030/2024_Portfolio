@@ -10,6 +10,9 @@ export type ProjectType = {
   path: string;
   img: string;
 };
+export type DocType = {
+  content: string;
+};
 
 export const getAllProjects = cache(async (): Promise<ProjectType[]> => {
   const filePath = path.join(process.cwd(), "data", "projects.json");
@@ -18,3 +21,9 @@ export const getAllProjects = cache(async (): Promise<ProjectType[]> => {
     .then<ProjectType[]>(JSON.parse)
     .then((posts) => posts.sort((a, b) => (a.id < b.id ? -1 : 1)));
 });
+
+export async function getDoc(fileName: string): Promise<DocType> {
+  const filePath = path.join(process.cwd(), "data/docs", `${fileName}.md`);
+  const content = await fs.readFile(filePath, "utf-8");
+  return { content };
+}

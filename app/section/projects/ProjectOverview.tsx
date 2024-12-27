@@ -12,11 +12,11 @@ export default function ProjectOverview({ title, overview, skills }: Props) {
         {title}
       </h3>
       <div className="grid sm:flex gap-10">
-        <dl className="grid gap-1 w-2/3">
+        <dl className="flex flex-col gap-3 w-2/3 justify-start">
           <dt className="text-brand">OVERVIEW</dt>
-          <dd>{overview}</dd>
+          <dd className="self-start">{overview}</dd>
         </dl>
-        <dl className="grid gap-1 w-1/3">
+        <dl className="flex flex-col gap-3 w-1/3">
           <dt className="text-brand">SKILLS</dt>
           <div>
             {skills.map((skill, i) => (
