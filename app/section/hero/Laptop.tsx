@@ -1,34 +1,49 @@
-import { useLoader } from "@react-three/fiber";
 import React, { useState, useEffect } from "react";
-import { GLTFLoader } from "three/examples/jsm/Addons.js";
+import { GLTF } from "three/examples/jsm/Addons.js";
 
-export default function Laptop() {
-  const glb = useLoader(GLTFLoader, "/models/laptop.glb");
+type Callback = (...args: any[]) => void;
 
-  const [scale, setScale] = useState([7, 7, 7]);
-  const [position, setPosition] = useState([-5, 0, 0]);
+export default function Laptop({ glb }: { glb: GLTF }) {
+  const [transform, setTransform] = useState({
+    scale: [7, 7, 7],
+    position: [-5, 0, 0],
+  });
 
   useEffect(() => {
-    const updateScale = () => {
+    // Debounce 함수 정의
+    const debounce = (func: Callback, delay: number): Callback => {
+      let timer: NodeJS.Timeout;
+      return (...args: any[]) => {
+        clearTimeout(timer); // 기존 타이머 제거
+        timer = setTimeout(() => func(...args), delay); // 새로운 타이머 실행
+      };
+    };
+
+    // 화면 크기에 따라 scale과 position 업데이트
+    const updateTransform = () => {
       if (window.innerWidth < 768) {
-        setScale([4, 4, 4]); // Smaller scale for mobile
-        setPosition([-3.2, 0.6, 0]);
+        setTransform({ scale: [4, 4, 4], position: [-3.2, 0.6, 0] });
       } else {
-        setScale([7, 7, 7]); // Default scale
-        setPosition([-5, 0, 0]);
+        setTransform({ scale: [7, 7, 7], position: [-5, 0, 0] });
       }
     };
 
-    updateScale();
-    window.addEventListener("resize", updateScale);
-    return () => window.removeEventListener("resize", updateScale);
+    const handleResize = debounce(updateTransform, 200);
+
+    updateTransform(); // 초기 호출
+    window.addEventListener("resize", handleResize); // 디바운스된 함수 등록
+    return () => window.removeEventListener("resize", handleResize); // 이벤트 리스너 정리
   }, []);
 
   return (
     <>
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 10]} intensity={5} />
-      <primitive object={glb.scene} scale={scale} position={position} />
+      <primitive
+        object={glb.scene}
+        scale={transform.scale}
+        position={transform.position}
+      />
     </>
   );
 }
