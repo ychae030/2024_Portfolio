@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { GLTF } from "three/examples/jsm/Addons.js";
 
-// Callback 타입 정의
-type Callback<T extends any[]> = (...args: T) => void;
+// Callback 타입 정의 (any 제거)
+type Callback<T extends unknown[]> = (...args: T) => void;
 
 export default function Laptop({ glb }: { glb: GLTF }) {
   const [transform, setTransform] = useState({
@@ -12,14 +12,14 @@ export default function Laptop({ glb }: { glb: GLTF }) {
 
   useEffect(() => {
     // Debounce 함수 정의
-    const debounce = <T extends any[]>(
+    const debounce = <T extends unknown[]>(
       func: Callback<T>,
       delay: number
     ): Callback<T> => {
-      let timer: NodeJS.Timeout;
+      let timer: ReturnType<typeof setTimeout>;
       return (...args: T) => {
-        clearTimeout(timer); // 기존 타이머 제거
-        timer = setTimeout(() => func(...args), delay); // 새로운 타이머 실행
+        clearTimeout(timer);
+        timer = setTimeout(() => func(...args), delay);
       };
     };
 
@@ -32,10 +32,11 @@ export default function Laptop({ glb }: { glb: GLTF }) {
       }
     };
 
+    // 디바운스된 함수 생성
     const handleResize = debounce(updateTransform, 200);
 
     updateTransform(); // 초기 호출
-    window.addEventListener("resize", handleResize); // 디바운스된 함수 등록
+    window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize); // 이벤트 리스너 정리
   }, []);
 
