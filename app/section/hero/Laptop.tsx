@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { GLTF } from "three/examples/jsm/Addons.js";
 
-type Callback = (...args: any[]) => void;
+// Callback 타입 정의
+type Callback<T extends any[]> = (...args: T) => void;
 
 export default function Laptop({ glb }: { glb: GLTF }) {
   const [transform, setTransform] = useState({
@@ -11,9 +12,12 @@ export default function Laptop({ glb }: { glb: GLTF }) {
 
   useEffect(() => {
     // Debounce 함수 정의
-    const debounce = (func: Callback, delay: number): Callback => {
+    const debounce = <T extends any[]>(
+      func: Callback<T>,
+      delay: number
+    ): Callback<T> => {
       let timer: NodeJS.Timeout;
-      return (...args: any[]) => {
+      return (...args: T) => {
         clearTimeout(timer); // 기존 타이머 제거
         timer = setTimeout(() => func(...args), delay); // 새로운 타이머 실행
       };
