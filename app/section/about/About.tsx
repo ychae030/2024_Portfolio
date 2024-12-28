@@ -24,7 +24,7 @@ export default function About({ content }: { content: string }) {
       <div ref={imageRef} className="mx-auto">
         <Image
           className="rounded-[30px]"
-          src={"/images/me.jpg"}
+          src={"/images/me.JPG"}
           alt="me"
           width={340}
           height={450}
