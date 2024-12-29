@@ -26,3 +26,21 @@ export const slideInWithScroll = (
     }
   );
 };
+
+export const LoadingCount = (setCount: (value: number) => void) => {
+  const ctx = gsap.context(() => {
+    gsap.to(
+      { value: 0 },
+      {
+        value: 100,
+        duration: 1.8,
+        ease: "power1.out",
+        onUpdate: function () {
+          setCount(Math.round(this.targets()[0].value));
+        },
+      }
+    );
+  });
+
+  return () => ctx.revert();
+};
