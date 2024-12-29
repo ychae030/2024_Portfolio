@@ -37,6 +37,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "GmarketSansMedium", Arial, Helvetica, sans-serif;
+  cursor: none;
 }
 
 @layer utilities {
@@ -62,4 +63,29 @@ body {
 .horizontal-line {
   stroke: white;
   stroke-width: 1;
+}
+
+/* custom cursor */
+.cursor,
+.cursor-hover {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.cursor {
+  @apply bg-foreground;
+  width: 15px;
+  height: 15px;
+}
+
+.cursor-hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease-out;
+}
+.cursor-hover.gradient {
+  background: linear-gradient(45deg, #d7abc5, #f9e7c8); /* 그라디언트 추가 */
 }

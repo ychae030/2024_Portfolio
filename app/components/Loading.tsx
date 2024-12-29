@@ -12,7 +12,7 @@ export default function Loading() {
   }, []);
 
   return (
-    <div className="fixed inset-0 justify-end flex bg-background font-[family-name:var(--font-display)]">
+    <div className="fixed inset-0 justify-end flex bg-background font-[family-name:var(--font-display)] z-50">
       <div
         ref={countRef}
         className="self-end p-4 text-brand text-9xl font-bold"

@@ -10,7 +10,10 @@ export default async function Projects() {
     <section className="py-32 ">
       <ul className="grid gap-20">
         {projects.map(({ id, title, overview, skills, img }) => (
-          <li key={id} className="flex gap-10 justify-between group">
+          <li
+            key={id}
+            className="hover-target flex gap-10 justify-between group"
+          >
             <ProjectImg img={img} />
             <ProjectOverview
               title={title}
