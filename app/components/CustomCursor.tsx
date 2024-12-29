@@ -19,7 +19,7 @@ export default function CustomCursor() {
     };
 
     const handleMouseEnter = () => {
-      setHoverText("GitHub");
+      setHoverText("GitHub Repository");
       gsap.to(cursorHover, {
         scale: 2.5,
         duration: 0.3,
@@ -57,7 +57,7 @@ export default function CustomCursor() {
       <div className="cursor fixed top-0 left-0 w-4 h-4 bg-foreground rounded-full pointer-events-none z-50"></div>
       <div className="cursor-hover fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-40 flex justify-center items-center">
         {hoverText && (
-          <span className="text-[7px] font-extrabold text-gray-800">
+          <span className="text-[5px] font-extrabold text-center text-gray-800">
             {hoverText}
           </span>
         )}
