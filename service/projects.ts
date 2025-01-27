@@ -9,6 +9,8 @@ export type ProjectType = {
   skills: string[];
   path: string;
   img: string;
+  date: string;
+  team: string;
 };
 export type DocType = {
   content: string;
@@ -19,7 +21,7 @@ export const getAllProjects = cache(async (): Promise<ProjectType[]> => {
   return fs
     .readFile(filePath, "utf-8")
     .then<ProjectType[]>(JSON.parse)
-    .then((posts) => posts.sort((a, b) => (a.id < b.id ? -1 : 1)));
+    .then((posts) => posts.sort((a, b) => (a.id < b.id ? 1 : -1)));
 });
 
 export async function getDoc(fileName: string): Promise<DocType> {

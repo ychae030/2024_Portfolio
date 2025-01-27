@@ -10,16 +10,20 @@ export default async function Projects() {
   return (
     <section className="py-32 ">
       <ul className="grid gap-20">
-        {projects.map(({ id, title, overview, skills, img, path }) => (
-          <ExternalLinkItem key={id} path={path}>
-            <ProjectImg img={img} />
-            <ProjectOverview
-              title={title}
-              overview={overview}
-              skills={skills}
-            />
-          </ExternalLinkItem>
-        ))}
+        {projects.map(
+          ({ id, title, overview, skills, img, path, date, team }) => (
+            <ExternalLinkItem key={id} path={path}>
+              <ProjectImg img={img} />
+              <ProjectOverview
+                title={title}
+                overview={overview}
+                skills={skills}
+                date={date}
+                team={team}
+              />
+            </ExternalLinkItem>
+          )
+        )}
       </ul>
     </section>
   );

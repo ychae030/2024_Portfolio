@@ -1,11 +1,13 @@
 [
   {
     "id": 1,
-    "title": "Portfolio",
-    "overview": "Next.js, Three.js, 그리고 GSAP를 활용하여 사용자와 상호작용하는 인터랙티브 웹 경험을 구현한 포트폴리오입니다. 스크롤에 따라 움직이는 3D 오브젝트, 커스텀 마우스 커서, 그리고 ScrollTrigger를 통한 애니메이션 효과로 시각적 재미를 주었습니다.",
-    "skills": ["Next.js", "Three.js", "Gsap", "TypeScript", "TailwindCSS"],
-    "path": "https://github.com/ychae030/2024_Portfolio",
-    "img": "/images/portfolio.png"
+    "title": "하루모음",
+    "overview": "할 일(Todo 리스트) 과 감정 이모티콘을 기반으로 사용자가 하루를 기록할 수 있는 다이어리 앱입니다. 할 일을 정리하고, 그날의 기분을 이모티콘으로 선택해 일기를 작성할 수 있습니다.",
+    "skills": ["React", "TypeScript", "TailwindCSS", "React-Query", "Firebase"],
+    "path": "https://github.com/ychae030/todo-diary",
+    "img": "/images/todo.png",
+    "date":"2024.9 ~ 2024.10",
+    "team":"Solo Project"
   },
   {
     "id": 2,
@@ -13,14 +15,28 @@
     "overview": "Next.js를 사용하여 정적 블로그를 구현했습니다. markdown 라이브러리를 활용해 포스트를 간단하게 작성하고 렌더링할 수 있으며, mailto 기능을 통해 블로그 방문자가 작성자와 직접적으로 소통할 수 있는 기능을 제공합니다. 정적 페이지의 특성을 살려 SEO에도 최적화되었습니다.",
     "skills": ["Next.js", "TypeScript", "TailwindCSS"],
     "path": "https://github.com/ychae030/next_blog",
-    "img": "/images/blog.svg"
+    "img": "/images/blog.svg",
+    "date":"2024.10",
+    "team":"Solo Project"
   },
   {
     "id": 3,
-    "title": "하루모음",
-    "overview": "할 일(Todo 리스트) 과 감정 이모티콘을 기반으로 사용자가 하루를 기록할 수 있는 다이어리 앱입니다. 할 일을 정리하고, 그날의 기분을 이모티콘으로 선택해 일기를 작성할 수 있습니다.",
-    "skills": ["React", "TypeScript", "TailwindCSS", "React-Query", "Firebase"],
-    "path": "https://github.com/ychae030/todo-diary",
-    "img": "/images/todo.png"
+    "title": "Commit Test",
+    "overview": "성격에 따라 IT직종을 추천해주는 웹사이트입니다. 두 번째 팀 프로젝트로 팀장과 디자인, Test 부분을 맡았습니다.",
+    "skills": ["React", "TypeScript", "TailwindCSS","Firebase"],
+    "path": "https://github.com/chae-030/commit_test",
+    "img": "/images/commit.svg",
+    "date":"2024.9 ~ 2024.11",
+    "team":"Team Project"
+  },
+  {
+    "id": 4,
+    "title": "Portfolio",
+    "overview": "Next.js, Three.js, 그리고 GSAP를 활용하여 사용자와 상호작용하는 인터랙티브 웹 경험을 구현한 포트폴리오입니다. 스크롤에 따라 움직이는 3D 오브젝트, 커스텀 마우스 커서, 그리고 ScrollTrigger를 통한 애니메이션 효과로 시각적 재미를 주었습니다.",
+    "skills": ["Next.js", "Three.js", "Gsap", "TypeScript", "TailwindCSS"],
+    "path": "https://github.com/ychae030/2024_Portfolio",
+    "img": "/images/portfolio.png",
+    "date":"2024.12",
+    "team":"Solo Project"
   }
 ]
