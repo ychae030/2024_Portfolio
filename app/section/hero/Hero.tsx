@@ -16,7 +16,7 @@ const renderSpans = (items: string[]) =>
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative h-screen">
+    <section id="home" className="relative h-screen">
       <p className="grid py-24">{renderSpans(PARA)}</p>
       <h2 className="grid justify-center text-display text-brand font-[family-name:var(--font-display)]">
         {renderSpans(HEADING)}

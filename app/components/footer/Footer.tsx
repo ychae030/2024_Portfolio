@@ -4,7 +4,7 @@ import FooterTop from "./FooterTop";
 
 export default function Footer() {
   return (
-    <footer className="py-3 px-2 sm:px-8">
+    <footer id="footer" className="py-3 px-2 relative z-0 sm:px-8">
       <div className="grid gap-14 p-8 bg-brand rounded-2xl text-background">
         <FooterTop />
         <FooterBottom />
